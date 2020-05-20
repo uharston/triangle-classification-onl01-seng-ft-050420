@@ -9,9 +9,6 @@ class Triangle
 
   def kind
     array = [@first_side, @second_side, @third_side]
-    # array << @first_side
-    # array << @second_side
-    # array << @third_side
     if array.min <= 0 || array.min(2).reduce(:+) <= array.max
       raise TriangleError
     elsif array.uniq.length == 1
@@ -22,11 +19,9 @@ class Triangle
       :scalene
     end
   end
-
   class TriangleError < StandardError
     def message
       puts "not a triangle"
     end
   end
-
 end
