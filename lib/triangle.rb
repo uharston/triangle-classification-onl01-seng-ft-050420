@@ -8,17 +8,12 @@ class Triangle
   end
 
   def kind
-    array = []
-    array << @first_side
-    array << @second_side
-    array << @third_side
-
+    array = [@first_side, @second_side, @third_side]
+    # array << @first_side
+    # array << @second_side
+    # array << @third_side
     if array.min <= 0 || array.min(2).reduce(:+) <= array.max
-      # begin
-        raise TriangleError
-      # rescue TriangleError => error
-        # puts error.message
-    #  end
+      raise TriangleError
     elsif array.uniq.length == 1
       :equilateral
     elsif array.uniq.length == 2
